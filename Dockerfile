@@ -1,11 +1,11 @@
 FROM python:3
 LABEL authors="STCB"
 
-COPY ./export-to-csv.py /app/app.py
+COPY . /app
 WORKDIR /app
 
 RUN pip install -r requirements.txt
 
-CMD ["python", "app.py"]
+CMD ["python", "export-to-csv.py"]
 
 ENTRYPOINT ["top", "-b"]
